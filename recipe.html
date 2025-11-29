@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Match - Find Your Perfect Recipe</title>
+    <link rel="stylesheet" href="recipe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Meal Match</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#recipes">Recipes</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search recipes...">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Discover Your Perfect Meal</h2>
+            <p>Find delicious recipes that match your taste and dietary preferences</p>
+            <button class="cta-button" id="exploreBtn">Explore Recipes</button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="section-title">
+            <h2>Recipe Categories</h2>
+            <p>Browse recipes by category to find exactly what you're craving</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card" data-category="breakfast">
+                <i class="fas fa-egg"></i>
+                <h3>Breakfast</h3>
+                <p>Start your day right</p>
+            </div>
+            <div class="category-card" data-category="lunch">
+                <i class="fas fa-apple-alt"></i>
+                <h3>Lunch</h3>
+                <p>Midday delights</p>
+            </div>
+            <div class="category-card" data-category="dinner">
+                <i class="fas fa-utensils"></i>
+                <h3>Dinner</h3>
+                <p>Evening specialties</p>
+            </div>
+            <div class="category-card" data-category="dessert">
+                <i class="fas fa-ice-cream"></i>
+                <h3>Desserts</h3>
+                <p>Sweet treats</p>
+            </div>
+            <div class="category-card" data-category="vegetarian">
+                <i class="fas fa-leaf"></i>
+                <h3>Vegetarian</h3>
+                <p>Plant-based goodness</p>
+            </div>
+            <div class="category-card" data-category="vegan">
+                <i class="fas fa-seedling"></i>
+                <h3>Vegan</h3>
+                <p>100% plant-based</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Section -->
+    <section class="recipes-section" id="recipes">
+        <div class="section-title">
+            <h2>Featured Recipes</h2>
+            <p>Handpicked recipes to inspire your next meal</p>
+        </div>
+
+        <div class="recipe-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+            <button class="filter-btn" data-filter="vegan">Vegan</button>
+            <button class="filter-btn" data-filter="gluten-free">Gluten-Free</button>
+            <button class="filter-btn" data-filter="quick">Quick & Easy</button>
+            <button class="filter-btn" data-filter="healthy">Healthy</button>
+        </div>
+
+        <div class="recipes-grid" id="recipesGrid">
+            <!-- Recipes will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="section-title">
+            <h2>About Meal Match</h2>
+            <p>Learn more about our mission and team</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>Meal Match was founded in 2025 with a simple mission: to make cooking accessible and enjoyable for everyone. We believe that delicious, healthy meals should be easy to find and simple to prepare.</p>
+                
+                <h3>Our Mission</h3>
+                <p>We're dedicated to helping people discover new recipes that match their dietary needs, cooking skills, and taste preferences. Our team of chefs and nutritionists work together to create recipes that are both delicious and nutritious.</p>
+                
+                <h3>What We Offer</h3>
+                <ul>
+                    <li>Curated recipes for all dietary needs</li>
+                    <li>Step-by-step cooking instructions</li>
+                    <li>Nutritional information for every recipe</li>
+                    <li>Personalized recipe recommendations</li>
+                    <li>Cooking tips and techniques</li>
+                </ul>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <h4>500+</h4>
+                    <p>Recipes</p>
+                </div>
+                <div class="stat">
+                    <h4>50K+</h4>
+                    <p>Happy Users</p>
+                </div>
+                <div class="stat">
+                    <h4>25+</h4>
+                    <p>Expert Chefs</p>
+                </div>
+                <div class="stat">
+                    <h4>15+</h4>
+                    <p>Dietary Categories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>123 Recipe Street, Food City, FC 12345</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p id="phoneNumber">Loading...</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>hello@mealmatch.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9AM - 6PM</p>
+                        <p>Saturday: 10AM - 4PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Meal Match</h3>
+                <p>Your go-to destination for delicious, easy-to-follow recipes that match your lifestyle and preferences.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="#" data-filter="breakfast">Breakfast</a></li>
+                    <li><a href="#" data-filter="lunch">Lunch</a></li>
+                    <li><a href="#" data-filter="dinner">Dinner</a></li>
+                    <li><a href="#" data-filter="dessert">Desserts</a></li>
+                    <li><a href="#" data-filter="vegetarian">Vegetarian</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for weekly recipe inspiration.</p>
+                <div class="search-bar" style="margin-top: 1rem;">
+                    <input type="text" placeholder="Your email address">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Meal Match. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="recipe.js"></script>
+</body>
+</html>
